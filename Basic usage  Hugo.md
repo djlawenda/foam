@@ -2,7 +2,7 @@
 
 After [installing](https://gohugo.io/installation/) Hugo, test your installation by running:
 
-You should see something like:
+YYYou should see something like:
 
 ```
 hugo v0.105.0-0e3b42b4a9bdeb4d866210819fc6ddcf51582ffa+extended linux/amd64 BuildDate=2022-10-28T12:29:05Z VendorInfo=snap:0.105.0
