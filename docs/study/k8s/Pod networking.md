@@ -17,3 +17,5 @@ other, they can either use IPC, the loopback interface, or a shared file
 system.
 
 All [[container]]s in a pod share the same network [[namespace]].
+
+[[Pod to Pod]]

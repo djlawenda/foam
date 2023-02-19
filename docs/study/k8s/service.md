@@ -15,3 +15,7 @@ The [[service]] operator requests existing IP addresses and information from
 the endpoint operator, and will manage the network connectivity based on
 labels. A service is used to communicate between pods, namespaces, and
 outside the cluster
+
+[[ClusterIP service]]
+
+[[NodePort service]]
