@@ -1,5 +1,6 @@
 ---
 type: definition-note
+tags: definition
 foam_template:
     name: definition-note
     description: Definition
