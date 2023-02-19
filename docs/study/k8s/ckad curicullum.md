@@ -1,7 +1,6 @@
 study notes from [[k8s]]
 
-# DOMAIN	WEIGHT
-1. Application Design and Build	20%
+## 1. Application Design and Build	20%
 - [[Pod lifecycle]] 
   - [[Create new pod]]
 - [[Add env variables to pod]]
@@ -19,7 +18,7 @@ study notes from [[k8s]]
 - [[Use volumes (emptyDir, ConfigMap, Secret]])
 - [[Mount volume to pod]]
 
-2. Application Deployment	20%
+## 2. Application Deployment	20%
 - [[Create deployment]]
   - [[Create deployment imperatively]]
 - [[Edit deployment]]
@@ -31,7 +30,7 @@ study notes from [[k8s]]
   - [[Create Job imperatively]]
 - [[Create CroneJobs]] 
 
-3. Application Observability and Maintenance	15%
+## 3. Application Observability and Maintenance	15%
 - [[Create resource quotas for pod]]
 - [[Create resource limits in namespace]]
 - [[Create readiness probes]]
@@ -44,7 +43,7 @@ study notes from [[k8s]]
 - [[Use labels in selector]]
 - [[Add annotation]]
 
-4. Application Environment, Configuration and Security	25%
+## 4. Application Environment, Configuration and Security	25%
 - [[Create Secrets]]
 - [[Add securityContext to pod]] 
 - [[Add securityContext to container]]
@@ -52,7 +51,7 @@ study notes from [[k8s]]
 - [[Create serviceAccount]]
 - [[Assign serviceAccount to pod]]
 
-5. Services and Networking	20%
+## 5. Services and Networking	20%
 - [[Create Service]]
   - [[Expose pod imperatively]]
 - [[Update Service]]
