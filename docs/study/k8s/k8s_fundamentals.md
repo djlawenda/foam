@@ -230,11 +230,11 @@ the endpoint operator, and will manage the network connectivity based on
 labels. A service is used to communicate between pods, namespaces, and
 outside the cluster
 
-[Labels]{.underline}
+[[[Labels]]]{.underline}
 
 Arbitrary strings which become part of the object metadata
 
-[Annotations]{.underline}
+[[[Annotations]]]{.underline}
 
 remain with the object but is not used as a selector
 
@@ -256,7 +256,7 @@ TO DO: check slack
 
 Installation
 
-kubeadmin
+[[kubeadmin]]
 
 kubeadm, the community-suggested tool from the Kubernetes project, that
 makes installing Kubernetes easy and avoids vendor-specific installers.
@@ -285,7 +285,7 @@ Credentials
 
 Context = combination of a cluster and user credentials
 
-Switch between context
+[[Switch between context]]
 
   -----------------------------------
   kubectl config use-context foobar
@@ -357,20 +357,20 @@ Checking access
 
 Workload
 
-readinessProbe
+[[readinessProbe]]
 
 Sometimes, applications are temporarily unable to serve traffic.
 Kubernetes provides readiness probes to detect and mitigate these
 situations. A pod with containers reporting that they are not ready does
 not receive traffic through Kubernetes Services.
 
-livenessProbe
+[[livenessProbe]]
 
 We also want to make sure it stays in a healthy state. Some applications
 may not have built-in checking, so we can use livenessProbes to
 continually check the health of a container.
 
-startupProbe
+[[startupProbe]]
 
 If kubelet uses a startupProbe, it will disable liveness and readiness
 checks until the application passes the test. The duration until the
@@ -419,7 +419,7 @@ WeaveNet
 
 It is typically used as an add-on for a CNI-enabled Kubernetes cluster.
 
-Services - Pod to Pod
+Services - [[Pod to Pod]]
 
 Service identifies the pods to transfer traffic by selectors
 
@@ -438,9 +438,9 @@ not identical
 
 CocroachDB is good for k8s
 
-ClusterIP svc is accessible within cluster only
+[[ClusterIP service]] is accessible within cluster only
 
-NodePort svc is accessible from outside
+[[NodePort service]] is accessible from outside
 
 nodePort must be in range 30000 to 32767
 
@@ -450,12 +450,12 @@ NodePort and static port (i.e.30008) is not secure bc it gives the
 access to cluster from external app better option is to use Load
 Balancer
 
-When LoadBalancer svc is created it automatically creates ClusterIP svc
+When [[LoadBalancer service]] is created it automatically creates ClusterIP svc
 and NodePort svc
 
 In production it's either Ingress or LoadBalancer service
 
-Service operator
+[[Service operator]]
 
 operator which listens to the endpoint operator to provide a persistent
 IP for Pods. Pods have ephemeral IP addresses chosen from a pool. Then
@@ -468,7 +468,7 @@ address. The IP address is assigned before the containers are started,
 and will be inserted into the containers. This IP is set for the life of
 the pod.
 
-Endpoint
+[[Endpoints]]
 
 The endpoint is created at the same time as the service. Note that it
 uses the pod IP address, but also includes a port. The service connects
@@ -554,7 +554,7 @@ Kubectl cheat sheet
 
 Namespaces
 
-Change namespace
+[[Change namespace]]
 
 +----------------------------------------------------------------------+
 | kubectl config set-context \--current                                |
@@ -578,13 +578,13 @@ Check object in and outside namespace
 
 Pod
 
-Create new pod
+[[Create new pod]]
 
   -----------------------------------------------------------
   kubectl run newpod \--image=nginx \--generator=run-pod/v1
   -----------------------------------------------------------
 
-Annotation
+[[Add annotation]]
 
 +----------------------------------------------------------------------+
 | **\$ kubectl annotate pods \--all description=\'Production Pods\' -n |

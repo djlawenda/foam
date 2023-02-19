@@ -19,3 +19,9 @@ system.
 All [[container]]s in a pod share the same network [[namespace]].
 
 [[Pod to Pod]]
+
+The requirement from Kubernetes is the following:
+
+-   All pods can communicate with each other across nodes.
+-   All nodes can communicate with all pods.
+-   No Network Address Translation (NAT).
