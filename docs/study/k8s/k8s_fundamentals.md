@@ -183,7 +183,7 @@ cluster-scoped.
 A [[node]] may be a virtual or physical machine, depending on the cluster.
 Each node is managed by the and contains the services necessary to run .
 
-To[[ mark a node unschedulable]], run:
+To[[Mark a node unschedulable]], run:
 
   ---------------------------
   kubectl cordon \$NODENAME
