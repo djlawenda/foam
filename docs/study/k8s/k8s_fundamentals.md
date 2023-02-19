@@ -25,7 +25,7 @@ principles.
 
 Kubernetes Architecture
 
-Control plane node
+[[Control plane node]]
 
 Kubernetes exposes an API via the API server.
 
@@ -49,7 +49,7 @@ Client
 You can communicate with the API using a local client called kubectl or
 you can write your own client and use curl commands.
 
-The kube-scheduler is forwarded the pod spec for running containers
+The [[kube-scheduler]] is forwarded the pod spec for running containers
 coming to the API and finds a suitable node to run those containers.
 
 The kube-scheduler uses an algorithm to determine which node will host a
@@ -61,7 +61,7 @@ bind a Pod to a particular node, though the Pod may remain in a pending
 state due to other settings
 
 Orchestration is managed through a series of watch-loops, also called
-controllers or operators. Each controller interrogates the
+[[controller]] or operators. Each controller interrogates the
 kube-apiserver for a particular object state, then modifies the object
 until the declared state matches the current state. These controllers
 are compiled into the kube-controller-manager
@@ -72,11 +72,11 @@ If the state does not match, the manager will contact the necessary
 controller to match the desired state. There are several operators in
 use, such as endpoints, namespace, and replication.
 
-CoreDNS server to handle DNS queries, Kubernetes service discovery, and
+[[CoreDNS server]] to handle DNS queries, Kubernetes service discovery, and
 other functions
 
 The state of the cluster, networking, and other persistent information
-is kept in an etcd database, or, more accurately, a b+tree key-value
+is kept in an [[etcd database]], or, more accurately, a b+tree key-value
 store. Rather than finding and changing an entry, values are always
 appended to the end. Previous copies of the data are then marked for
 future removal by a compaction process.
@@ -94,8 +94,8 @@ on backing up etcd.
 
 All nodes
 
-Each node in the cluster runs two processes: a kubelet, which is often a
-systemd process, not a container, and kube-proxy.
+Each node in the cluster runs two processes: a [[kubelet]], which is often a
+systemd process, not a container, and [[kube-proxy]].
 
 The kubelet receives requests to run the containers, manages any
 resources necessary and works with the container engine to manage them
@@ -118,7 +118,7 @@ userspace mode, in which it monitors Services and Endpoints using a
 random port to proxy traffic via ipvs. A network plugin pod, such as
 calico-node, may be found depending on the plugin in use.
 
-The container runtime is the software that is responsible for running
+The [[container runtime]] is the software that is responsible for running
 containers.
 
 Kubernetes supports container runtimes such as , , and any other
@@ -132,9 +132,9 @@ Containerd
 
 Github containers https://github.com/containers
 
-Objects
+[[Primitives]]
 
-A Pod consists of one or more containers which share an IP address,
+A [[Pod]] consists of one or more containers which share an IP address,
 access to storage and namespace. Typically, one container in a Pod runs
 an application, while other containers support the primary application.
 
@@ -142,7 +142,7 @@ Containers in a Pod are started in parallel. As a result, there is no
 way to determine which container becomes available first inside a pod.
 The use of InitContainers can order startup, to some extent.
 
-Init container, which must complete before app containers will be
+[[Init container]], which must complete before app containers will be
 started. Should the init container fail, it will be restarted until
 completion, without the app container running.
 
@@ -172,24 +172,24 @@ All containers in a pod share the same network namespace.
 
 TO DO: Concept of InitContianers
 
-Namespace
+[[Namespace]]
 
 A segregation of resources, upon which resource quotas and permissions
 can be applied. Kubernetes objects may be created in a namespace or
 cluster-scoped.
 
-How to check what object is namespaced?
+[[How to check what object is namespaced]]
 
-A node may be a virtual or physical machine, depending on the cluster.
+A [[node]] may be a virtual or physical machine, depending on the cluster.
 Each node is managed by the and contains the services necessary to run .
 
-To mark a Node unschedulable, run:
+To[[ mark a node unschedulable]], run:
 
   ---------------------------
   kubectl cordon \$NODENAME
   ---------------------------
 
-Context
+[[context]]
 
 A combination of user, cluster name and namespace. A convenient way to
 switch between combinations of permissions and restrictions. For example
@@ -205,7 +205,7 @@ and you can create your own, as well. A simplified view of an operator
 is an agent, or Informer, and a downstream store. Using a DeltaFIFO
 queue, the source and downstream are compared.
 
-Deployment
+[[Deployment]]
 
 The default and feature-filled operator for containers is a Deployment.
 A Deployment does not directly work with pods. Instead it manages
@@ -225,7 +225,7 @@ containers until the status matches the spec.
 
 -   Container engine \>\> creates, terminates, updates \>\> containers
 
-The service operator requests existing IP addresses and information from
+The [[service]] operator requests existing IP addresses and information from
 the endpoint operator, and will manage the network connectivity based on
 labels. A service is used to communicate between pods, namespaces, and
 outside the cluster
