@@ -52,5 +52,8 @@ Note Created: 2023-02-19
 - Annotations
 - Service
   - create, update
-  - network policy
+- network policy
+- volumes
+  - pv
+  - pvc
 
