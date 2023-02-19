@@ -22,3 +22,9 @@ interacts with the kube-apiserver to determine the state of the cluster.
 If the state does not match, the manager will contact the necessary
 controller to match the desired state. There are several operators in
 use, such as endpoints, namespace, and replication.
+
+They query the current state, compare it against the spec, and execute
+code based on how they differ. Various operators ship with Kubernetes,
+and you can create your own, as well. A simplified view of an operator
+is an agent, or Informer, and a downstream store. Using a DeltaFIFO
+queue, the source and downstream are compared.
