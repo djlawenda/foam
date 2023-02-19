@@ -9,4 +9,3 @@ foam_template:
 Note Created: 2023-02-19
 
 ## Note
-
