@@ -55,5 +55,9 @@ Note Created: 2023-02-19
 - network policy
 - volumes
   - pv
+    - emptyDir
+    - ConfigMap
+    - Secret
   - pvc
+  - mount
 
