@@ -1,5 +1,6 @@
 ---
 type: exercise-note
+tags: exercise
 foam_template:
     name: exercise-note
     description: Exercise
